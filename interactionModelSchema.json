@@ -1,0 +1,133 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "fizz buzz",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "HIGH"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "stop",
+                        "cancel"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "what",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": [
+                        "yeah",
+                        "yes"
+                    ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": [
+                        "repeat"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": [
+                        "nope",
+                        "no"
+                    ]
+                },
+                {
+                    "name": "NextNumberIntent",
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "FizzBuzz",
+                            "type": "FizzBuzzResponse"
+                        }
+                    ],
+                    "samples": [
+                        "{FizzBuzz}",
+                        "{number}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "name": "FizzBuzzResponse",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Buzz"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fizz"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "NextNumberIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "FizzBuzz",
+                            "type": "FizzBuzzResponse",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {},
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.70652763148.76497632211.532782320685"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Slot.Validation.70652763148.76497632211.532782320685",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I'm sorry, I did not recognize that. Please try again."
+                    }
+                ]
+            }
+        ]
+    }
+}

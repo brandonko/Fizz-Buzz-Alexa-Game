@@ -1,0 +1,19 @@
+{
+  "name": "fizz-buzz-alexa-game",
+  "version": "1.0.0",
+  "description": "This is a simple Alexa program that allows users to play the interactive math game known as \"Fizz Buzz\".",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonko/Fizz-Buzz-Alexa-Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonko/Fizz-Buzz-Alexa-Game/issues"
+  },
+  "homepage": "https://github.com/brandonko/Fizz-Buzz-Alexa-Game#readme"
+}
