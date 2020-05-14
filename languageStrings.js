@@ -10,6 +10,8 @@ module.exports = {
     HELP_REPROMPT: 'Try saying a number, fizz, or buzz.',
     ERROR_MESSAGE: 'Sorry, an error occurred.',
     YES_MESSAGE: 'Great! I will start... 1',
-    LOST_MESSAGE: 'You said %s, but the correct answer was %s. You lose! You lasted %s rounds at an average response rate of %s seconds. Would you like to play again?'
+    LOST_MESSAGE: 'You said %s, but the correct answer was %s. You lose! You lasted %s rounds at an average response rate of %s seconds. Would you like to play again?',
+    NEXT_ROUND_MESSAGE: '%s. Your respone time was %s seconds.',
+    NEXT_ROUND_REPROMPT: 'I said %s. It is your turn!'
 }
 };

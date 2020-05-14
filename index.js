@@ -207,8 +207,8 @@ async handle(handlerInput) {
 		sessionAttributes.time = d.getTime();
 		sessionAttributes.totalTime += timePassed;
 		return handlerInput.responseBuilder
-		.speak(nextNumberForAlexa.toString() + '. Your respone time was ' + timePassed.toString() + ' seconds.')
-		.reprompt('I said ' + nextNumberForAlexa.toString() + '. It is your turn!')
+		.speak(requestAttributes.t('NEXT_ROUND_MESSAGE', nextNumberForAlexa.toString(), timePassed.toFixed(2)))
+		.reprompt(requestAttributes.t('NEXT_ROUND_REPROMPT', nextNumberForAlexa.toString()))
 		.getResponse();
 	} else {
 		// User did not respond correctly
@@ -219,7 +219,7 @@ async handle(handlerInput) {
 		let averageResponseRate = sessionAttributes.totalTime / numRounds;
 		await attributesManager.savePersistentAttributes();
 		return handlerInput.responseBuilder
-		.speak(requestAttributes.t('LOST_MESSAGE', (fizzBuzzResponse ? fizzBuzzResponse : userResponseNumber.toString()), targetResponse.toString(), numRounds.toString(), averageResponseRate.toString()))
+		.speak(requestAttributes.t('LOST_MESSAGE', (fizzBuzzResponse ? fizzBuzzResponse : userResponseNumber.toString()), targetResponse.toString(), numRounds.toString(), averageResponseRate.toFixed(2)))
 		.reprompt(requestAttributes.t('CONTINUE_MESSAGE'))
 		.getResponse();
 	}
